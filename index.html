@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer-Support</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #f5f5f5;
+    padding: 20px;
+    width: 90%; /* Flexible width for smaller screens */
+    box-sizing: border-box; /* Ensures padding doesn't increase width */
+    border: 1px solid #ddd; /* Added for better visibility */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header img {
+    width: 100px;
+    max-width: 100%;
+}
+
+.header .invoice-info {
+    text-align: right;
+    font-size: 14px;
+    color: #333;
+}
+
+.header .invoice-info a {
+    color: #0070ba;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header .invoice-info a:hover {
+    text-decoration: underline;
+}
+
+.content p {
+    font-size: 12px;
+    color: #333;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.content a {
+    color: #0070ba;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+.billing-info {
+    margin: 20px 0;
+}
+
+.billing-info h2 {
+    font-size: 16px;
+    color: #fff;
+    background-color: #0070ba;
+    padding: 10px;
+    margin: 0;
+}
+
+.billing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.billing-table th, .billing-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.billing-table th {
+    background-color: #0070ba;
+    color: white;
+    font-weight: bold;
+}
+
+.billing-table td {
+    font-size: 14px;
+    color: #333;
+}
+
+.footer-content {
+    margin: 20px 0;
+}
+
+.footer-content p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.footer-content a {
+    color: #0070ba;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.signature {
+    margin-top: 20px;
+}
+
+.signature a {
+    color: #0070ba;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signature p {
+    font-size: 14px;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* Responsive Design for All Devices */
+
+/* Extra Large Screens (Desktops, 1200px and above) */
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 700px; /* Slightly larger for large screens */
+        padding: 25px;
+    }
+
+    .header img {
+        width: 120px;
+    }
+
+    .header .invoice-info {
+        font-size: 16px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    .billing-info h2 {
+        font-size: 18px;
+    }
+
+    .billing-table th, .billing-table td {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .footer-content p, .signature p {
+        font-size: 16px;
+    }
+}
+
+/* Large Screens (Laptops, 992px to 1199px) */
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+    .container {
+        max-width: 650px;
+        padding: 20px;
+    }
+
+    .header img {
+        width: 110px;
+    }
+
+    .header .invoice-info {
+        font-size: 14px;
+    }
+
+    .content p {
+        font-size: 13px;
+    }
+
+    .billing-info h2 {
+        font-size: 16px;
+    }
+
+    .billing-table th, .billing-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .footer-content p, .signature p {
+        font-size: 14px;
+    }
+}
+
+/* Medium Screens (Tablets, 768px to 991px) */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .header {
+        flex-direction: row; /* Keep horizontal layout for tablets */
+        align-items: flex-start;
+    }
+
+    .header img {
+        width: 90px;
+    }
+
+    .header .invoice-info {
+        font-size: 13px;
+    }
+
+    .content p {
+        font-size: 11px;
+    }
+
+    .billing-info h2 {
+        font-size: 15px;
+    }
+
+    .billing-table th, .billing-table td {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .footer-content p, .signature p {
+        font-size: 13px;
+    }
+}
+
+/* Small Screens (Large Phones, 576px to 767px) */
+@media screen and (max-width: 767px) and (min-width: 576px) {
+    .container {
+        max-width: 95%;
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header .invoice-info {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    .header img {
+        width: 80px;
+    }
+
+    .content p {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .billing-info h2 {
+        font-size: 14px;
+    }
+
+    .billing-table {
+        display: block;
+        overflow-x: auto; /* Horizontal scroll for table */
+        white-space: nowrap; /* Prevents text wrapping in table */
+    }
+
+    .billing-table th, .billing-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .footer-content p, .signature p {
+        font-size: 12px;
+    }
+}
+
+/* Extra Small Screens (Phones, 360px to 575px) */
+@media screen and (max-width: 575px) and (min-width: 360px) {
+    .container {
+        max-width: 98%;
+        padding: 10px;
+        margin: 5px auto;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header .invoice-info {
+        text-align: center;
+        margin-top: 8px;
+        font-size: 11px;
+    }
+
+    .header img {
+        width: 70px;
+    }
+
+    .content p {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    .billing-info h2 {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .billing-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .billing-table th, .billing-table td {
+        padding: 6px;
+        font-size: 11px;
+    }
+
+    .footer-content p, .signature p {
+        font-size: 11px;
+    }
+}
+
+/* Very Small Screens (Small Phones, below 360px) */
+@media screen and (max-width: 359px) {
+    .container {
+        max-width: 100%;
+        padding: 8px;
+        margin: 5px auto;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header .invoice-info {
+        text-align: center;
+        margin-top: 5px;
+        font-size: 10px;
+    }
+
+    .header img {
+        width: 60px;
+    }
+
+    .content p {
+        font-size: 9px;
+        line-height: 1.3;
+    }
+
+    .billing-info h2 {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .billing-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .billing-table th, .billing-table td {
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    .footer-content p, .signature p {
+        font-size: 10px;
+    }
+}
+    </style>
+    <script>
+        function formatDate(date) {
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            let day = date.getDate();
+            let month = months[date.getMonth()];
+            let year = date.getFullYear();
+            return `${day} ${month}, ${year}`;
+        }
+
+        function updateDate() {
+            let currentDate = new Date();
+            let formattedDate = formatDate(currentDate);
+            document.getElementById("currentDate").innerText = formattedDate;
+        }
+
+        window.onload = updateDate;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://1000logos.net/wp-content/uploads/2017/05/Paypal-Logo-2022.png" alt="PayPal Logo">
+            <div class="invoice-info">
+                <p><strong>Help-line Number:</strong><br>
+                <a href="tel: +1-(833)666-7588"> +1-(833)666-7588</a></p>
+                <p><strong>Issue Date:</strong> <span id="currentDate">28 March 2025</span></p>
+                <p><strong>Transaction Number:</strong>GD-EIBYA#14337</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <p>Dear Customer,</p>
+            <p>You have successfully sent an Transaction of $ 499 to btc wallet.<br>
+                This is an Receipt for your recent Transaction through PayPal-COINBASE INC, within 24 hours.<br>
+                This charge will appear on your statement as payment to COINBASE INC, within 24 hours.</p>
+            <p style="border-top: 1px solid #000;"><strong>Delivery information:</strong> Online Delivery
+            <strong>Payment method:</strong> PayPal-Funds<br>
+<strong>Amount:</strong> $ 499</p>
+<p><strong>Txn no:</strong> MJ4356TY6R</p>
+        </div>
+
+        <div class="billing-info">
+            <h2>Charge Details Information</h2>
+            <table class="billing-table">
+                <tr>
+                    <th>Description of Item</th>
+                    <th>Qty</th>
+                    <th>Value</th>
+                    <th>Amount</th>
+
+                </tr>
+                <tr>
+                    <td>Bitcoin</td>
+                    <td>01</td>
+                    <td>$ 499</td>
+                    <td>$ 499</td>
+
+                </tr>
+            </table>
+        </div>
+
+        <div class="footer-content">
+            <p>Thanks for using PayPal Express checkout the safer, easier way to pay and get_paid online.</p>
+            <p>In case, you didn't make this payment kindly call_us our Charge Details support team at <a href="tel: +1-(833)666-7588"> +1-(833)666-7588</a> to Terminate. For cancellation or make any changes or for any other issues contact Our support team.</p>
+            <p><strong>Note:</strong>You have 24 hours to raise a Dispute in the PayPal Inc. for cancellation and Refunded.
+            </p>
+        </div>
+
+        <div class="signature">
+            <p>Sincerely,</p>
+            <p>PayPal Charge Details team</p>
+            <p><a href="tel: +1-(833)666-7588" class=""> +1-(833)666-7588</a></p>
+        </div>
+    </div>
+</body>
+</html>
